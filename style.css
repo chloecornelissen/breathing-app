@@ -1,0 +1,233 @@
+:root {
+    --primary-color: #8e0000;
+    --secondary-color: #8e0000;
+    --hold-color: #983628;
+    --large: 200px;
+    --main-large: 300px;
+    --small: 40px;
+    --expand-duration: 4s;
+    --contract-duration: 4s;
+    --hold-duration: 4s;
+    --total-duration: 12s;
+	--button-color: #581908;
+	--button-border-color: #2E0E02;
+	--border-color: #2E0E02;
+	--text-color: #581908;
+}
+
+
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    overflow: hidden;
+    justify-content: center;
+    align-content: center;
+}
+
+.main {
+    height: var(--main-large);
+    width: 100vw;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    height: 300px;
+    width: 100vw;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    height: auto;
+}
+
+.animation{
+    background-color: var(--primary-color);
+    width: var(--small);
+    height: var(--small);
+    border-radius: calc( var(--small) / 2);
+    display: inline-block;
+    animation: breath var(--total-duration) ease-in infinite;
+}
+
+input {
+    margin: 20px 0;
+    height: 40px;
+    font-size: 1.25em;
+    border-radius: 10px;
+    border: 2px solid var(--border-color);
+}
+
+h1,p,input,label {
+    color: var(--text-color);
+    font-family: "Work Sans", Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+
+@keyframes breath {
+  0% {
+    background-color: var(--primary-color);
+    width: var(--small);
+    height: var(--small);
+    border-radius: calc(var(--small) / 2);
+  }
+  33.4% {
+    background-color: var(--secondary-color);
+    width: var(--large);
+    height: var(--large);
+    border-radius: calc(var(--large) / 2);
+    animation-timing-function: ease-in;
+    animation-duration: var(--expand-duration);
+  }
+  66.8% {
+    background-color: var(--hold-color);
+    width: var(--large);
+    height: var(--large);
+    border-radius: calc(var(--large) / 2);
+    animation-timing-function: ease-out;
+    animation-duration: var(--hold-duration);
+  }
+  100% {
+    background-color: var(--primary-color);
+    width: var(--small);
+    height: var(--small);
+    border-radius: calc(var(--small) / 2);
+    animation-timing-function: ease-out;
+    animation-duration: var(--contract-duration);
+  }
+  
+}
+
+element {
+  animation-name: breath;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+
+
+.button-container {
+  width: 100px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  border-radius: 10px;
+}
+
+#preset {
+    margin-bottom: 0px;
+  width: 200px;
+  height: 50px;
+  background-color: var(--button-color);
+  border: 2px solid var(--button-border-color);
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 10px;
+  color: white;
+}
+
+#preset:hover{
+      background-color: #d0eaf5;
+color: grey;
+}
+
+.button-containter-right {
+  width: 200px;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
+
+#hide {
+    margin-bottom: 10px;
+  width: 200px;
+  height: 50px;
+  background-color: var(--button-color);
+  border: 2px solid var(--button-border-color);
+  border-radius: 10px;
+  cursor: pointer;
+
+  font-size: 20px;
+  padding: 10px;
+  color: white;
+}
+
+#hide:hover{
+      background-color: #d0eaf5;
+color: grey;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  button {
+    display:none;
+  }
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+  /* Change the styles for the dark mode */
+  .dark-mode h1, .dark-mode p, .dark-mode input, .dark-mode label {
+    color: #fff;
+  }
+  .dark-mode .animation {
+    background-color: #333;
+    color: #fff;
+  }
+  .dark-mode #preset, .dark-mode #hide {
+      background-color: var(--button-color);
+	border: 2px solid var(--button-border-color);
+    color: #fff;
+  }
+  
+  .dark-mode input {
+      background-color: #333;
+  }
+  
+  
+  .menu-icon {
+    display: none;
+    position: absolute;
+  top: 50px;
+  right: 20px;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+  top: 70px;
+  right: 20px;
+  }
+.dropdown-menu li {
+  list-style-type: none;
+}
+  .dropdown-menu a {
+    display: block;
+    background-color: var(--button-color);
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border: var(--border-color);
+  }
+  
+  @media screen and (max-width: 600px) {
+    
+    .menu-icon {
+      display: inline-block;
+    }
+  }
+  
+  
+  
+  
+  

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERT Breathing</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500;800;900&amp;display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="ERT Breathing">
+    <link rel="apple-touch-icon" href="logo-color.icon.png">
+    <link rel="icon" href="logo-color.icon.png">
+    
+    
+    <script>
+        $(document).ready(function(){
+  $(".menu-icon").click(function(){
+    $(".dropdown-menu").toggle();
+  });
+});
+    </script>
+</head>
+<body class="bodyselector" onload="setTimeout(function() { window.scrollTo(0, 1) }, 100);">
+    <div class="menu-phone"><div class="menu-icon">
+        <i class="fas fa-bars" style="font-size: 36px;"></i>
+      </div>
+      <ul class="dropdown-menu">
+        <li><a onclick="easy()">Easy Breathing</a></li>
+        <li><a onclick="unwind()">Unwind Breathing</a></li>
+        <li><a onclick="calm()">Calm Breathing</a></li>
+        <li><a onclick="calmplus()">Calm+ Breathing</a></li>
+        <li><a onclick="hide()">Hide all distractions</a></li>
+        <li><a onclick="dark()">Dark</a></li>
+        <li><a onclick="changeColor()">Change color</a></li>
+
+      </ul>
+      </div>
+    <div id="click">
+    <h1>ERT breathing</h1>
+    <main class="main">
+        <div class="animation"></div>
+    </main>
+    </div>
+
+    <section class="inputs" id="inputsId">
+  
+  <label for="expand">adjust expansion timing in seconds</label>
+  <input type="number" id="expand" value="4" min="1">
+  <label for="contract">adjust contraction timing in seconds</label>
+  <input type="number" id="contract" value="4" min="1">
+  <label for="size">ajust hold time</label>
+  <input type="hold" id="hold" value="4" min="0">
+</section>
+<p>Made by Chloë Cornelissen</p>
+<div class="button-container">
+<button id="preset" onclick="easy()">Easy Breathing</button>
+<button id="preset" onclick="unwind()">Unwind Breathing</button>
+<button id="preset" onclick="calm()">Calm Breathing</button>
+<button id="preset" onclick="calmplus()">Calm+ Breathing</button>
+</div>
+<div class="button-containter-right">
+<button id="hide" onclick="hide()">Hide all distractions</button>
+<button id="dark" class="dark" onclick="dark()">dark</button>
+<button id="colorChange" class="colorChange" onclick="changeColor()">Change color</button>
+</div>
+	<script src="colors.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+
+</html>
